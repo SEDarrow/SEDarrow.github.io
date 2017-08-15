@@ -1,0 +1,87 @@
+body {
+	background-color: rgb(0, 0, 64);
+}
+
+.upper {
+	font-family: 'Amatic SC', cursive;
+}
+
+#header {
+	width: 100%;
+	font-family: 'Dancing Script', cursive;
+	font-size: 40px;
+	text-align: center;
+	margin: 0;
+	color: rgb(12, 220, 142);
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+	left: 0;
+    width: 100%;
+	display: inline-flex;
+	justify-content: space-between;
+	background-color: rgb(12, 220, 142);
+	color: rgb(0, 0, 64);
+	font-family: 'Dancing Script', cursive;
+	font-size: 40px;
+	line-height: 40px;
+	padding: 0;
+	margin: 0;
+	align-items: center;
+	height: 65px;
+	border-top-style: solid;
+	border-top-color: rgb(0, 0, 64);
+}
+
+#general {
+	display: inline-flex;
+	align-items: center;
+}
+
+#name {
+	font-size: 55px;
+	padding-left: 15px;
+	font-family: 'Great Vibes', cursive;
+	color: black;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
+#resume {
+	font-family: 'Amatic SC', cursive;
+	font-size: 40px;
+	padding-left: 25px;
+}
+
+#link {
+	padding-right: 15px;
+	font-size: 40px;
+}
+
+a {
+	text-decoration:none;
+	color: rgb(0, 0, 64);
+}
+
+a:hover {
+	opacity: .5;
+}
+
+#content {
+	display: inline-flex;
+	justify-content: center;
+	width: 100%;
+}
+
+#title {
+	position: absolute;
+	top: 120px;
+	left: 39%;
+	width: 20%;
+	font-family: 'Amatic SC', cursive;
+	color: white;
+	text-align: center;
+	font-size: 40;
+}

@@ -1,0 +1,139 @@
+<html>
+	<head>
+		<title>Sarah Darrow - Outreach</title>
+		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Dancing+Script" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+		<link rel="stylesheet" href="outreach.css">
+	</head>
+	<body>
+		<div id="header">
+			<h2>Teaching <span class="upper">PEOPLE</span> About <span class="upper">COMPUTERS</span></h2>
+		</div>
+		
+		<p id="title"> Organizations I've worked with: </p>
+		
+		<div id="footer">
+			<div id="general">
+				<a id="name" href="index.html"> Sarah Darrow </a>
+				<a id="resume" href="resume.pdf"> Resume </a>
+			</div>
+			
+			<a id="link" href="projects.html"> Teaching <span class="upper">COMPUTERS</span> About <span class="upper">PEOPLE</span> &#9654 </a>
+		</div>
+		
+		<div id="content">
+			<svg id="hexagons">
+			</svg>
+		</div>
+		
+		<script>
+			const partners = {
+				"ProjectCSGIRLS": {
+					image: "http://www.projectcsgirls.com/uploads/2/6/6/2/26620618/1440132048.png",
+					website: "http://www.projectcsgirls.com/",
+					description: ""
+				},
+				"MSU Learning Center": {
+					image: "http://hottytoddy.com/wp-content/uploads/2017/01/Mississippi_State_Bulldogs.svg-1.png",
+					website: "http://www.tlc.msstate.edu/",
+					description: ""
+				},
+				"Mississippi Alliance for Women in Computing": {
+					image: "mafwic.png",
+					website: "https://www.msawc.org/",
+					description: ""
+				},
+				"Google": {
+					image: "https://maxcdn.icons8.com/Share/icon/Logos//google_logo1600.png",
+					website: "https://edu.google.com/resources/programs/computer-science-summer-institute/",
+					description: ""
+				},
+				"FIRST": {
+					image: "http://marsbot.org/files/FIRSTlogoR_color_rev_transparent.png",
+					website: "https://www.firstinspires.org/",
+					description: ""
+				},
+				"CodeHS": {
+					image: "https://static.codehs.com/img/logos/logo_name_square.png",
+					website: "https://codehs.com/",
+					description: ""
+				},
+				"codecircle": {
+					image: "http://www.codecircle.org/uploads/2/8/8/9/28898163/logo-03.png",
+					website: "http://www.codecircle.org/",
+					description: ""
+				},
+				"Society of Women Engineers": {
+					image: "http://www.engr.ucr.edu/~swe/img/swe_logos/logo/swe_logo_color.png",
+					website: "http://www.engr.ucr.edu/~swe/img/swe_logos/logo/swe_logo_color.png",
+					description: ""
+				}
+			};
+			
+			var div = document.getElementById("hexagons");
+			const WIDTH = document.getElementById("header").offsetWidth;
+			const NUM_HEXAGONS = 2;
+			const HEX_WIDTH = WIDTH / (NUM_HEXAGONS * 2 - 1); 
+			const SPACE = WIDTH / NUM_HEXAGONS;
+			const PADDING = 30;
+			const LINE_LENGTH = HEX_WIDTH / 2;
+			const IMAGE_SIZE = Math.round(LINE_LENGTH - PADDING) * 1.5;
+			
+			div.setAttribute("width",  WIDTH * 2 - HEX_WIDTH * NUM_HEXAGONS - (NUM_HEXAGONS - 1) * SPACE + PADDING * NUM_HEXAGONS);
+			div.setAttribute("height", (SPACE * (Object.keys(partners).length / (NUM_HEXAGONS * 2 - 1))).toFixed(0));
+			
+			var hexagon;
+			var image;
+			var a;
+			var curr_x = 0; // left-most point
+			var curr_y = HEX_WIDTH / 2; // left-most point
+			var points = "";
+			var hexesOnLine = 0;
+			var oddRow = true;
+			for (var partner in partners) {
+				hexagon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+				points = "";
+				points += curr_x.toFixed(0) + "," + curr_y.toFixed(0) + ", "; // left-most point
+				points += (curr_x + LINE_LENGTH / 2).toFixed(0) + "," + (curr_y - HEX_WIDTH / 2).toFixed(0) + ", "; // top-left
+				points += (curr_x + LINE_LENGTH * 3 / 2).toFixed(0) + "," + (curr_y - HEX_WIDTH / 2).toFixed(0) + ", "; // top-right
+				points += (curr_x + HEX_WIDTH).toFixed(0) + "," + curr_y.toFixed(0) + ", "; // right-most point
+				points += (curr_x + LINE_LENGTH * 3 / 2).toFixed(0) + "," + (curr_y + HEX_WIDTH / 2).toFixed(0) + ", "; // bottom-right
+				points += (curr_x + LINE_LENGTH / 2).toFixed(0) + "," + (curr_y + HEX_WIDTH / 2).toFixed(0);  // bottom-left
+				
+				hexagon.setAttribute("points",  points); 
+				hexagon.setAttribute("style", "fill:#0CDC8E");
+				div.appendChild(hexagon);
+
+				a = document.createElementNS("http://www.w3.org/2000/svg", "a");
+				a.setAttribute("href", partners[partner].website);
+				a.setAttribute("target", "_blank");
+				
+				image = document.createElementNS("http://www.w3.org/2000/svg", "image");
+				image.setAttribute("x", Math.round(curr_x + PADDING * 2.5));
+				image.setAttribute("y", Math.round(curr_y - HEX_WIDTH / 2 + PADDING * 2.5));
+				image.setAttribute("width", IMAGE_SIZE);
+				image.setAttribute("height", IMAGE_SIZE);
+				image.setAttribute("href", partners[partner].image);
+				
+				div.appendChild(a);
+				a.appendChild(image);
+				
+				curr_x += SPACE + PADDING;
+				hexesOnLine++;
+				
+				if(hexesOnLine >= NUM_HEXAGONS || (!oddRow && (hexesOnLine + 1) == NUM_HEXAGONS)) {
+					hexesOnLine = 0;
+					oddRow = !oddRow;
+					curr_y += HEX_WIDTH / 2 + PADDING / 4;
+					if(oddRow) {
+						curr_x = 0;
+					} else {
+						curr_x = SPACE / 2 + PADDING / 2;
+					}
+				}
+				
+				
+			}
+		</script>
+	</body>
+</html>
