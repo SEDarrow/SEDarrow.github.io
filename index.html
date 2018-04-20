@@ -1,26 +1,13 @@
 <html>
 	<head>
 		<title>Sarah Darrow</title>
-		<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Dancing+Script" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Antic" rel="stylesheet">
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
-		<div id="left" class="side">
-			<a href="outreach.html" id="outreach">
-				<h2 class="triangle"> &#9664 </h2>
-				<h2 class="text">Teaching </br><span class="upper">PEOPLE</span> About </br><span class="upper">COMPUTERS</span></h2>
-			</a>
-		</div>
-		<img src="portrait.png" id="portrait">
-		<a href="resume.pdf" id="resume"> Resume </a>
-		<div id="right" class="side">
-			<a href="projects.html" id="projects">
-				<h2 class="text">Teaching </br><span class="upper">COMPUTERS</span> About </br><span class="upper">PEOPLE</span></h2>
-				<h2 class="triangle"> &#9654 </h2>
-			</a>
-		</div>
-		
-		<pre class="overtext" id="left-overtext">
+
+			<pre class="overtext" id="left-overtext">
 int getMovesByDegree(int size, struct point start, struct point* sortedMoves, int spotNum) { 
     int x, y, m, i, j; 
 
@@ -121,6 +108,158 @@ long findTour(int size, struct point start, int spotNum, long visited, int moveM
     return visited;
 }
 		</pre>
+		
+		<script>
+			function hide() {
+				document.getElementById("who").style.display = "none";
+			}
+			
+			function show() {
+				document.getElementById("who").style.display = "block";
+			}
+		</script>
+		
+		<div id="name">
+			<h1> SARAH DARROW </h1>
+			<div id="links">
+				<a href="https://www.github.com/SEDarrow" class="title-link"> Github </a>
+				<a href="resume.pdf" class="title-link"> Resume </a>
+				<a href="htps://www.linkedin.com/in/sarahdarrow" class="title-link"> LinkedIn </a>
+			</div>
+			<div id="icons">
+				<img class="icon" src="question-mark.png" alt="About Me" onclick="show()">
+				<a href="mailto:sd1209@msstate.edu"> <img class="icon" src="close-envelope.png" alt="Contact"> </a>
+			</div>
+		</div>
+		
+		<div id="timeline">
+			<div id="line"></div>
+	
+			<div class="event" style="margin-left:50px">
+				<p class="date"> April 2018 </p>
+				<span class="tick">&nbsp; </span>
+				<div class="description">
+					<div class="title-div">
+						<img class="logo" src="msu_logo.svg">
+						<h3 class="title">  Undergraduate Research Symposium</h3>
+					</div>
+					<p class="details"> Presented poster "Optimizing Interaction Enjoyment with Reinforcement Learning on Autonomous Robot Behavior"</p>
+					<p class="details"> Received 3rd place in Physical Sciences and Engineering category</p>
+					<a class="event-link" href="2018poster.pdf"> Learn More </a>
+				</div>
+			</div>
+			
+			<div class="event">
+				<p class="date"> March 2018 </p>
+				<span class="tick">&nbsp; </span>
+				<div class="description">
+					<div class="info">
+						<div class="title-div">
+							<img class="logo" src="hri.png">
+							<h3 class="title"> IEEE/ACM International Conference on Human Robot Interaction</h3>
+						</div>
+						
+						<p class="details"> Presented demonstration "TherabotTM: A Robotic Support Companion"</p>
+						<a class="event-link" href="https://dl.acm.org/authorize.cfm?key=N43639"> Learn More </a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="event  big-space">
+				<p class="date"> November 2017 </p>
+				<span class="tick">&nbsp;</span>
+				<div class="description">
+					<div class="info">
+						<div class="title-div">
+							<img class="logo" src="varsity.png">
+							<h3 class="title"> Started Working at Varsity Tutors</h3>
+						</div>
+						
+						<p class="details"> Tutor students remotely in a variety of subjects including: Python, PHP, SQL, HTML, and CSS</p>
+						<a class="event-link" href="https://www.varsitytutors.com/"> Learn More </a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="event">
+				<p class="date"> October 2017 </p>
+				<span class="tick">&nbsp;</span>
+				<div class="description">
+					<div class="info">
+						<div class="title-div">
+							<img class="logo" src="ghc.png">
+							<h3 class="title"> Grace Hopper Celebrtion</h3>
+						</div>
+						<p class="details"> Recieved scholarship funded by Google to attend Grace Hopper Celebration of Women in Computing Conference</p>
+						<a class="event-link" href="https://ghc.anitab.org/"> Learn More </a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="event">
+				<p class="date"> September 2017 </p>
+				<span class="tick">&nbsp;</span>
+				<div class="description">
+					<div class="info">
+					<div class="title-div">
+						<img class="logo" src="msu_logo.svg">
+						<h3 class="title">  Awarded Bagley College of Engineering Undergraduate Research Stipend</h3>
+					</div>
+						<p class="details"> Recieved stipend of $1250 per semester to participate in undergraduate research. </p>
+						<p class="details"> Proposed and began research on development of sensor system for TherabotTM, a robotic dog for the treatment of PTSD patients. </p>
+						<a class="event-link" href="http://www.bagley.msstate.edu/undergraduate-research-stipend/"> Learn More </a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="event big-space">
+				<p class="date"> July 2017 </p>
+				<span class="tick">&nbsp;</span>
+				<div class="description">
+					<div class="info">
+					<div class="title-div">
+						<img class="logo" src="cssi.png">
+						<h3 class="title"> Google Computer Science Summer Institute Teaching Assistant</h3>
+					</div>
+						<p class="details"> Volunteered as a Teaching Assistant at a computer science summer camp hosted by Google in Cambridge, MA. </p>
+						<p class="details"> Helped teach high school students computer science principles and develop websites. </p>
+						<a class="event-link" href="https://edu.google.com/resources/programs/computer-science-summer-institute/"> Learn More </a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="event" style="margin-right:50px;">
+				<p class="date"> May-August 2017 </p>
+				<span class="tick">&nbsp;</span>
+				<div class="description">
+					<div class="info">
+					<div class="title-div">
+						<img class="logo" src="google.png">
+						<h3 class="title"> Google Software Engineering Internship</h3>
+					</div>
+						<p class="details"> Interned on Google Flights team in Cambridge, MA.</p>
+						<p class="details"> Developed two applications for visualizing system data that the team will use to evaluate systems receiving data from airlines. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<div id="who">
+			<div id="who-top">
+				<h3> Who is Sarah Darrow? </h3>
+				<p onclick="hide()"> <img src="cancel-button.png"> </p>
+			</div>
+			<div id="who-content">
+			<img id="bio-pic" src="bio.jpg" alt="Bio Picture">
+			<ul>
+				<li> <strong>Computer Science Student</strong> at Mississippi State University. Graduating December 2018. </li>
+				<li> <strong>Researcher</strong> at <a href="www.stars.msstate.edu"> Social, Therapeutic, and Robotic Systems (STaRS) Lab </a> </li>
+				<li> <strong>Director</strong> of Curriculum Development for <a href="https://projectcsgirls.com"> ProjectCSGIRLS</a> </li>
+			</ul>
+			</div>
+		</div>
+
 		
 	</body>
 </html>
